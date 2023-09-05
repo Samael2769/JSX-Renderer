@@ -21,3 +21,20 @@ function render(vnode) {
 
     return n;
 }
+
+// Array of strings we want to show in a list:
+let items = ['foo', 'bar', 'baz'];
+
+// creates one list item given some text:
+function item(text) {
+    return <li>{text}</li>;
+}
+
+// a "view" with "iteration" and "a partial":
+let list = render(
+  <ul>
+    { items.map(item) }
+  </ul>
+);
+
+document.body.appendChild(list);
